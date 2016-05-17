@@ -97,9 +97,11 @@ Canvasを移動
 
 ![Rename Camera](art/7-rename.png)
 
-クロスシーンのカメラを一意に参照するように変更
+Canvasにスクリプトを追加
+(クロスシーンのカメラを一意に参照するように変更)
 
 - [CameraFinder.cs](https://gist.github.com/mattak/b49bb8066f285123f963703c9f33a060#file-camerafinder-cs) を Assets/ScriptsにDL
+- Add Component: CameraFinder
 
 ![Finder](art/7-finder.png)
 
@@ -193,8 +195,73 @@ ContentView > Button
 ![minheight](art/10-minheight.png)
 
 わかりやすく背景色を変更
+灰色(`#CACACA`) とかにしておく
 
-![Color](art/10-button_color.png)
+![Color](art/10-gray.png)
 
-赤とかにしておく
+Textの状態を変更
+- RectTransform: stretch x stretch
+    - Left: 40, Right: 40, Top: 0, Bottom: 0
+- Text
+    - Text: "ListItem"
+    - FontSize: 56
+    - Alignment: Left
+
+![Text](art/10-text.png)
+
+"Assets/Prefabs" フォルダを作成.
+HierarchyのListItemViewを選択して、作成したフォルダにDrag&Dropする
+
+![Prefab](art/10-prefab.png)
+
+Prefabとして実体ができたので、HierarchyのListItemViewは削除
+
+![Remove GameObject](art/10-remove.png)
+
+## 11. ListItemViewを追加するボタンを作成
+
+Canvasにボタンを追加
+
+- Canvasを選択
+- 右クリック UI > Button
+- 名前: "AddButton"
+
+![Component](art/11-component.png)
+![Name](art/11-name.png)
+
+ボタンの位置を下付きにする
+- RectTransform: stretch bottom
+    - Pivot x:0.5, y:0
+    - Height: 200
+
+![Transform](art/11-transform.png)
+
+ボタンのテキストサイズを変更
+- FontSize: 56
+- Text: "追加"
+
+![Text](art/11-text.png)
+
+## 12. ListItemViewを追加するScriptをアタッチ
+
+Assets/Scripts/AddButton.csを作成
+
+![Script](art/12-script.png)
+
+- [AddButton.cs](https://github.com/mattak/UnityListView/blob/master/Assets/Scripts/AddButton.cs)を書く、もしくはDL
+
+![Add](art/12-add.png)
+
+AddButtonにScriptを追加
+
+- AddButtonを選択
+- Add Component: "AddButton"
+- Prefab: "ListItemView" (ProjectよりAssets/Prefabs/ListItemViewよりDrag&Drop)
+- Add To: "ContentView" (HierarchyよりContentViewをDrag&Drop)
+
+![Add](art/12-select.png)
+
+実行して、アイテム追加できればOK
+
+![Item](art/12-done.png)
 
