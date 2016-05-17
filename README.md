@@ -265,3 +265,5 @@ AddButtonにScriptを追加
 
 ![Item](art/12-done.png)
 
+お疲れ様でした。
+
