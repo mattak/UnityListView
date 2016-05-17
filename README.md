@@ -97,6 +97,15 @@ Canvasを移動
 
 ![Rename Camera](art/7-rename.png)
 
+クロスシーンのカメラを一意に参照するように変更
+
+- [CameraFinder.cs](https://gist.github.com/mattak/b49bb8066f285123f963703c9f33a060#file-camerafinder-cs) を Assets/ScriptsにDL
+
+![Finder](art/7-finder.png)
+
+ついでに"ListCamera"のAudioListenerをDisableにしておく.
+(複数のAudioListenerが存在するとログに注意がでる)
+
 ## 8. Canvasの設定
 
 Canvasの設定
